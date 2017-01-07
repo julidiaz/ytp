@@ -6,3 +6,9 @@
 	<li><strong>Login:</strong> {{ oneUser.login }}</li>
 	<li><strong>Password:</strong> {{ oneUser.password }}</li>
 </ul>
+<h4>ACCESS CREDENTIALS:</h4>
+<ul style="list-style-type:none">
+	<!-- Two-way data binding in forms fields -->
+	<li><input [(ngModel)]="oneUser.login" placeholder="Login"/></li>
+	<li><input [(ngModel)]="oneUser.password" placeholder="Password"/></li>
+</ul>
