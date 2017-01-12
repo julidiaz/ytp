@@ -3,8 +3,20 @@
 <ul>
 	<li><strong>Id:</strong> {{ oneUser.id }}</li>
 	<li><strong>Full Name:</strong> {{ oneUser.fullName }}</li>
-	<li><strong>Login:</strong> {{ oneUser.login }}</li>
-	<li><strong>Password:</strong> {{ oneUser.password }}</li>
+	<!-- By this way we can add/remove at the same time SEVERAL CSS classes to the element, 
+	according to different component properties values; we do that calling a method we defined
+	in the component to make this task -->
+	<li [ngClass]="setCssClasses()">{{ oneUser.email }}</li>
+	<li [ngClass]="setCssClasses()">{{ oneUser.mobile }}</li>
+	<!-- By this way we can add/remove ONE inline CSS style -->
+	<li [style.font-size]="isSpecial ? 'x-large' : 'smaller'">{{ oneUser.city }}</li>
+	<!-- By this way we can add/remove SEVERAL inline CSS styles to the element,
+	according to different component properties values; we do that calling a method we defined
+	in the component to make this task -->
+	<li [ngStyle]="setCssInlineStyles()">{{ oneUser.country }}</li>
+	<!-- By this way we can add/remove one CSS class to the element, depending of component property value (isUserCredentials) -->
+	<li [class.userCredentials]="isUserCredentials"><strong>Login:</strong> {{ oneUser.login }}</li>
+	<li [class.userCredentials]="isUserCredentials"><strong>Password:</strong> {{ oneUser.password }}</li>
 </ul>
 <h4>ACCESS CREDENTIALS:</h4>
 <ul style="list-style-type:none">
