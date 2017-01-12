@@ -1,0 +1,21 @@
+/* 
+	CSS file for AppComponent 
+*/
+
+.userCredentials {
+	color: red;
+	font-weight: bold;
+	font-family: 'Arial';
+}
+
+.isSaveable {
+	text-decoration: underline;
+}
+
+.isUnchanged {
+	font-family: 'Verdana';
+}
+
+.isSpecial {
+	color: purple;
+}
