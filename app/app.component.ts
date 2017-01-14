@@ -1,17 +1,7 @@
 import { Component } from '@angular/core';
 
-// Here we can define other classes used in the app, if needed ...
-// We need to include the "export" keyword to make the class available outside this component
-export class User {
-	id: number;
-	fullName: string;
-	email: string;
-	mobile: string;
-	city: string;
-	country: string;
-	login: string;
-	password: string;
-}
+import { User } from './user';
+
 
 // We create an array of users
 const USERS: User[] = [
