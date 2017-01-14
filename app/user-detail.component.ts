@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 
+// Import User class
 import { User } from './user';
 
 @Component({
@@ -10,7 +11,19 @@ import { User } from './user';
 export class UserDetailComponent {
 
 	// Properties -------------
+
+	// In our UserDetailComponent, the "user" property receives
+	// the data from the user selected ("userSelected" property in parent's component, AppComponent)
+	// So this property is an INPUT property, beceuse receives data, so we need to use the @Input decorator
+	// Without it, the binding used in the app.component.html template wouldn't work: <user-detail [user]="selectedUser"></user-detail>
 	@Input() user: User;
+
+	isSaveable: boolean		= true;	// Indicates if the component is saveable
+	isUnchanged: boolean	= true; // Indicates if the component is unchanged
+	isSpecial: boolean		= true;	// Indicates if the component is special
+
+	// For testing purpose: we want to test the ngClass directive
+	isUserCredentials: boolean	= false;
 
 
 	// Methods() --------------

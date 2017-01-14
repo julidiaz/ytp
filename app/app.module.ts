@@ -1,13 +1,13 @@
-import { NgModule }      	from '@angular/core';
-import { BrowserModule } 	from '@angular/platform-browser';
+import { NgModule }      		from '@angular/core';
+import { BrowserModule } 		from '@angular/platform-browser';
 // We import FormsModule to allow two-way data binding
 // in forms fields
-import { FormsModule }		from '@angular/forms';
+import { FormsModule }			from '@angular/forms';
 
 // The main app component
-import { AppComponent }  	from './app.component';
+import { AppComponent }  		from './app.component';
 // Making our custom components recognized by the app
-import { UserDetailComponent } from './user-detail.component';
+import { UserDetailComponent } 	from './user-detail.component';
 
 
 @NgModule({
