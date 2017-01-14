@@ -22,14 +22,14 @@
 		<!-- By this way we can add/remove at the same time SEVERAL CSS classes to the element, 
 		according to different component properties values; we do that calling a method we defined
 		in the component to make this task -->
-		<li [ngClass]="setCssClasses()">{{ selectedUser.email }}</li>
-		<li [ngClass]="setCssClasses()">{{ selectedUser.mobile }}</li>
+		<li [ngClass]="setCssClasses()"><strong>Email:</strong> {{ selectedUser.email }}</li>
+		<li [ngClass]="setCssClasses()"><strong>Mobile Phone:</strong> {{ selectedUser.mobile }}</li>
 		<!-- By this way we can add/remove ONE inline CSS style -->
-		<li [style.font-size]="isSpecial ? 'x-large' : 'smaller'">{{ selectedUser.city }}</li>
+		<li [style.font-size]="isSpecial ? 'x-large' : 'smaller'"><strong>City:</strong> {{ selectedUser.city }}</li>
 		<!-- By this way we can add/remove SEVERAL inline CSS styles to the element,
 		according to different component properties values; we do that calling a method we defined
 		in the component to make this task -->
-		<li [ngStyle]="setCssInlineStyles()">{{ selectedUser.country }}</li>
+		<li [ngStyle]="setCssInlineStyles()"><strong>Country:</strong> {{ selectedUser.country }}</li>
 		<!-- By this way we can add/remove one CSS class to the element, depending of component property value (isUserCredentials) -->
 		<li [class.userCredentials]="isUserCredentials"><strong>Login:</strong> {{ selectedUser.login }}</li>
 		<li [class.userCredentials]="isUserCredentials"><strong>Password:</strong> {{ selectedUser.password }}</li>
