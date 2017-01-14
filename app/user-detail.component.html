@@ -1,0 +1,28 @@
+<div *ngIf="user">
+	<h4>Selected User Info. ({{ user.login }}) :</h4>
+	<ul>
+		<li><strong>Id:</strong> {{ user.id }}</li>
+		<li><strong>Full Name:</strong> {{ user.fullName }}</li>
+		<!-- By this way we can add/remove at the same time SEVERAL CSS classes to the element, 
+		according to different component properties values; we do that calling a method we defined
+		in the component to make this task -->
+		<li [ngClass]="setCssClasses()"><strong>Email:</strong> {{ user.email }}</li>
+		<li [ngClass]="setCssClasses()"><strong>Mobile Phone:</strong> {{ user.mobile }}</li>
+		<!-- By this way we can add/remove ONE inline CSS style -->
+		<li [style.font-size]="isSpecial ? 'x-large' : 'smaller'"><strong>City:</strong> {{ user.city }}</li>
+		<!-- By this way we can add/remove SEVERAL inline CSS styles to the element,
+		according to different component properties values; we do that calling a method we defined
+		in the component to make this task -->
+		<li [ngStyle]="setCssInlineStyles()"><strong>Country:</strong> {{ user.country }}</li>
+		<!-- By this way we can add/remove one CSS class to the element, depending of component property value (isUserCredentials) -->
+		<li [class.userCredentials]="isUserCredentials"><strong>Login:</strong> {{ user.login }}</li>
+		<li [class.userCredentials]="isUserCredentials"><strong>Password:</strong> {{ user.password }}</li>
+	</ul>
+	<h4>ACCESS CREDENTIALS:</h4>
+	<ul style="list-style-type:none">
+		<!-- Two-way data binding in forms fields -->
+		<li><input [(ngModel)]="user.login" placeholder="Login"/></li>
+		<li><input [(ngModel)]="user.password" placeholder="Password"/></li>
+	</ul>
+
+</div>
