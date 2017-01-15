@@ -1,16 +1,2 @@
 <h1>Hello {{ titleApp }} {{ versionApp }}</h1>
-<h2>My list of Users:</h2>
-<ul class="users">
-	<!-- Adding *ngFor directive for iterate to the list of users of the component ("listOfUsers" component's property)		 
-	Adding also click event over the user; event handler in component: onSelect(),
-		 passing the current user in the list as argument, through "user" variable defined in *ngFor;
-		 we "catch" the clicked user in the component through a "selectedUser" property
-		 Also, we apply an CSS class ("selected") in case that the current user in the list
-		 is equal to the selected user -->
-	<li *ngFor="let user of listOfUsers" (click)="onSelect(user)" [class.selected]="user===selectedUser">
-		<!-- UPDATE: we fix the information, using the "selectedUser" property of the component -->
-		<span class="badge">{{ user.fullName}} &lt;{{ user.email }}&gt;</span>
-	</li>
-</ul>
-
-<user-detail [user]="selectedUser"></user-detail>
+<users></users>
